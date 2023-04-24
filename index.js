@@ -1,6 +1,8 @@
 const express = require('express');
-
+var cors = require('cors')
 let app = express();
+
+app.use(cors())
 
 function randomIntFromInterval(min, max) { // min and max included 
     return Math.floor(Math.random() * (max - min + 1) + min)
@@ -54,7 +56,7 @@ app.get('/pie', (req, res) => {
     res.send(response);
 });
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 4000;
 
 
 app.listen(port, () => {
